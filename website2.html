@@ -1,0 +1,562 @@
+<html>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+	<head>
+	<title>Gabriel's Pokemon Game Tracker</title>
+	<style type="text/css">
+		body {
+		background-color: #0B000C;
+		margin-left:10%;
+		margin-right: 10%;
+		padding: 10px 10px 10px 10px;
+		}
+
+
+		img {
+		position: absolute;
+		right: 10%;
+		padding: 2px 2px 2px 2px;
+		width: 150px;
+		}
+		
+		h1 {
+		color: #FFF5CC;
+		font-family: 'Roboto Slab', serif;
+		font-size: 29px;
+		}
+
+		h2 {
+		color: #FFF5CC;
+		font-family: 'Roboto Slab', serif;
+		font-size: 20px;
+		position: relative;
+		}
+		h3 {
+		color: #FFF5CC;
+		font-family: 'Roboto Slab', serif;
+		font-size: 18px;
+		}
+		h4 {
+		color: #FFF5CC;
+		font-family: 'Roboto Slab', serif;
+		font-size: 16px;
+		}
+
+		p {
+		color: #FFF5CC;
+		font-family: 'Roboto Slab', serif;
+		font-size: 12px;
+		}
+		a {
+		font-family: 'Roboto Slab', serif;
+		font-size: 10px;
+		}
+		ol {
+      		color: #FFF5CC;
+		font-size: 12px;
+    		}
+		ul {
+      		color: #FFF5CC;
+		font-size: 12px;
+    		}
+
+		.container {
+		width: 9%;
+		position: fixed;
+		left: 0%;
+		background: #CAD9DD;
+		display: grid;
+		grid-template-columns: 40pxs;
+	
+  		}
+
+  	:root {
+    	--penguin-size: 100px;
+    	--penguin-skin: gray;
+    	--penguin-belly: white;
+    	--penguin-beak: orange;
+  	}
+
+ 	 @media (max-width: 350px) {
+		 :root {
+
+    }
+  	}
+
+
+
+
+
+
+	/*penguin stuff */
+  	.penguin {
+    position: absolute;
+    margin: 35%;
+    display: block;
+    margin-top: 0%;
+    height: var(--penguin-size, 10px);
+    width: var(--penguin-size, 10px);
+  }
+
+  .right-cheek {
+    top: 15%;
+    left: 35%;
+    background: var(--penguin-belly, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .left-cheek {
+    top: 15%;
+    left: 5%;
+    background: var(--penguin-belly, white);
+    width: 60%;
+    height: 70%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .belly {
+    top: 60%;
+    left: 2.5%;
+    background: var(--penguin-belly, white);
+    width: 95%;
+    height: 100%;
+    border-radius: 120% 120% 100% 100%;
+  }
+
+  .penguin-top {
+    top: 10%;
+    left: 25%;
+    background: var(--penguin-skin, gray);
+    width: 50%;
+    height: 45%;
+    border-radius: 70% 70% 60% 60%;
+  }
+
+  .penguin-bottom {
+    top: 40%;
+    left: 23.5%;
+    background: var(--penguin-skin, gray);
+    width: 53%;
+    height: 45%;
+    border-radius: 70% 70% 100% 100%;
+  }
+
+  .right-hand {
+    top: 5%;
+    left: 25%;
+    background: var(--penguin-skin, black);
+    width: 30%;
+    height: 60%;
+    border-radius: 30% 30% 120% 30%;
+    transform: rotate(130deg);
+    z-index: -1;
+    animation-duration: 3s;
+    animation-name: wave-right;
+    animation-iteration-count: infinite;
+    transform-origin:0% 0%;
+    animation-timing-function: linear;
+  }
+
+  @keyframes wave-right {
+      10% {
+        transform: rotate(110deg);
+      }
+      20% {
+        transform: rotate(130deg);
+      }
+      30% {
+        transform: rotate(110deg);
+      }
+      40% {
+        transform: rotate(130deg);
+      }
+    }
+
+  .left-hand {
+    top: 35%;
+    left: 95%;
+    background: var(--penguin-skin, gray);
+    width: 30%;
+    height: 60%;
+    border-radius: 30% 30% 30% 120%;
+    transform: rotate(-130deg);
+    z-index: -1;
+    animation-duration: 3s;
+    animation-name: wave-left;
+    animation-iteration-count: infinite;
+    transform-origin:0% 0%;
+    animation-timing-function: linear;
+  }
+  @keyframes wave-left {
+      10% {
+        transform: rotate(-110deg);
+      }
+      20% {
+        transform: rotate(-130deg);
+      }
+      30% {
+        transform: rotate(-110deg);
+      }
+      40% {
+        transform: rotate(-130deg);
+      }
+    }
+
+  .right-feet {
+    top: 85%;
+    left: 60%;
+    background: var(--penguin-beak, orange);
+    width: 15%;
+    height: 30%;
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(-80deg);
+    z-index: -2222;
+  }
+
+  .left-feet {
+    top: 85%;
+    left: 25%;
+    background: var(--penguin-beak, orange);
+    width: 15%;
+    height: 30%;
+    border-radius: 50% 50% 50% 50%;
+    transform: rotate(80deg);
+    z-index: -2222;
+  }
+
+  .right-eye {
+    top: 45%;
+    left: 60%;
+    background: black;
+    width: 15%;
+    height: 17%;
+    border-radius: 100%;
+  }
+
+  .left-eye {
+    top: 45%;
+    left: 25%;
+    background: black;
+    width: 15%;
+    height: 17%;
+    border-radius: 50%;
+  }
+
+  .sparkle {
+    top: 10%;
+    left: 36%;
+    background: white;
+    width: 45%;
+    height: 45%;
+    border-radius: 50%;
+  }
+
+  .blush-right {
+    top: 65%;
+    left: 15%;
+    background: pink;
+    width: 15%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  .blush-left {
+    top: 65%;
+    left: 70%;
+    background: pink;
+    width: 15%;
+    height: 10%;
+    border-radius: 50%;
+  }
+
+  .beak-top {
+    top: 62%;
+    left: 40%;
+    background: var(--penguin-beak, orange);
+    width: 20%;
+    height: 8%;
+    border-radius: 50%;
+  }
+
+  .beak-middle {
+    top: 65%;
+    left: 42.5%;
+    background: black;
+    width: 15%;
+    height: 5%;
+    border-radius: 50%;
+    z-index: 1;
+  }
+
+  .beak-bottom {
+    top: 65%;
+    left: 42%;
+    background: var(--penguin-beak, orange);
+    width: 16%;
+    height: 8%;
+    border-radius: 50%;
+  }
+
+
+  .penguin * {
+    position: absolute;
+  }
+
+/* end of penguin stuff */
+
+
+</style>
+
+
+
+
+
+	</head>
+
+
+
+	<body>
+	
+	<center>
+	<h1>My Current Pokemon Save Files</h1>
+	</center>
+	<div class="container">
+	<h2 style="font-size: 15px; color: green; justify-self: center;">Jump To:</h2>
+	<a href="#Pokemon-Y">Pokemon Y</a>	
+	<a href="#Pokemon-X">Pokemon X</a>
+	<a href="#Pokemon-OR">Pokemon Omega Ruby</a>
+	<a href="#Pokemon-AS">Pokemon Alpha Sapphire</a>
+	<a href="#Pokemon-BD">Pokemon Brilliant Diamond</a>
+	<a href="#Priorities">Current Priorities</a>	
+	<a href="#More-Info">More Pokemon Info</a>
+	</div>
+	
+
+
+
+	<div>	
+	<img src="pokemony.jpg">
+	<h2 id="Pokemon-Y">Pokemon Y</h2>
+
+
+	<h4>Goals:</h4>
+	<ol>
+		<li>Complete the regional pokedex</li>
+		<li>Look extremely drippy</li>
+		<li>Shiny of each team member</li>
+		<li>Shiny of each mega?</li>
+		<li>If nothing else to be done, create a shiny dex >:)</li>
+	</ol>
+	<h4>Features:</h4>
+	<ul>
+		<li>I have beaten the game</li>
+		<li>I look quite drippy</li>
+		<li>I have a full level 100 team</li>
+		<li>I have all megas and their stones</li>
+	</ul>
+	</div>
+	<br>
+	<br>
+
+	<div>
+	<img src="pokemonx.jpg">
+	<h2 id="Pokemon-X">Pokemon X</h2>
+
+
+	<h4>Goals:</h4>
+	<ol>
+		<li>Beat the game</li>
+		<li>Make Linoone perfect</li>
+		<li>Catch Zapdos</li>
+		<li>Trade Zapdos, Bulbasaur, and Shiny Linoone to Pokemon Y</li>
+		<li>Look like shiny Linoone :)</li>
+		<li>Make a PR video with Linoone</li>
+		<li>Once required by Y, reset save</li>
+	</ol>
+	<h4>Features:</h4>
+	<ul>
+		<li>I a shiny Linoone at max friendship, affection, effort values, and overleveled</li>
+		<li>I look somewhat similar to my shiny Linoone</li>
+		<li>I have a full team of Linoones (5 pickup, none have items)</li>
+		<li>I have 5 gym badges</li>
+	</ul>
+	</div>
+
+
+
+
+
+	<br>
+	<br>
+
+
+
+	<div>
+	<img src="pokemonor.jpg">
+	<h2 id="Pokemon-OR">Pokemon Omega Ruby</h2>
+
+
+	<h4>Goals:</h4>
+	<ol>
+		<li>Catch every mega, get their stones, and give them their stones</li>
+		<li>Complete the regional pokedex</li>
+		<li>Organize my boxes</li>
+		<li>Create contest gods</li>
+		<li>Shiny of each team member</li>
+		<li>Shiny of each mega?</li>
+		<li>Between this game and Y, create a completed national dex</li>
+		<li>If nothing else to be done, create a shiny dex >:)</li>
+	</ol>
+	<h4>Features:</h4>
+	<ul>
+		<li>I have beaten the game many times</li>
+		<li>I have beaten the contests</li>
+		<li>I have a full level 100 team</li>
+		<li>I have most megas and their stones</li>
+		
+	</ul>
+	</div>
+
+
+
+
+	<br>
+	<br>
+	<div>
+	<img src="pokemonas.jpg">
+	<h2 id="Pokemon-AS">Pokemon Alpha Sapphire</h2>
+
+	<h4>Goals:</h4>
+	<ol>
+		<li>Catch any/all necessary Pokemon for Omega Ruby Pokedex</li>
+		<li>Get to areas where you can receive other game starters</li>
+		<li>Reset multiple times to find </li>
+		<li>Shiny of each mega?</li>
+		<li>If nothing else to be done, create a shiny dex >:)</li>
+	</ol>
+	<h4>Features:</h4>
+	<ul>
+		<li>I have a fresh save file for whatever is required</li>
+	</ul>	
+	</div>
+
+	<br>
+	<br>
+
+	<div>
+	<img src="pokemonbd.jpg">
+	<h2 id="Pokemon-BD">Pokemon Brilliant Diamond</h2>
+
+
+	<h4>Goals:</h4>
+	<ol>
+		<li>Do a first playthrough</li>
+		<li>Beat the game</li>
+		<li>Have fun!</li>
+
+	</ol>
+	<h4>Features:</h4>
+	<ul>
+		<li>New Game :)</li>
+	</ul>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<div>
+	<h2 id="Priorities">Current Priorities</h2>
+
+	
+		<h3>Beat Pokemon X<h3>	
+	<ol>
+ 		<li>Beat gyms 6 and 7, finish Team Flare plot, and beat gym 8
+
+			<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+  			<li style="margin-left:2em">Use Shiny Linoone as much as possible, and give it any rare candies collected with pick up</li>
+  			<li style="margin-left:2em; padding-bottom: 0;">Teach all possible HMs to GOON</li>
+			<li style="margin-left:2em; padding-bottom: 0;">Catch only a single ditto to be traded to Y (do not even catch Xerneas)</li>
+ 			</ol>
+ 		</li>
+ 		<li>Solo the Elite 4 with Shiny Linoone (if possible)</li>
+	</ol>
+
+	<h3>Complete Y Pokedex<h3>	
+	<ol>
+ 		<li>Acquire Venusaur line
+ 			<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+  			<li style="margin-left:2em">Trade Bulbasaur from X to Y</li>
+  			<li style="margin-left:2em;">Level up Bulbasaur to 16 to evolve into Ivysaur, then Ivysaur to 32 to evolve into Venusaur</li>
+ 			</ol>
+			</li>
+		<li>Acquire Zapdos
+			<ol style="list-style-type: lower-alpha; padding-bottom: 0;">
+  			<li style="margin-left:2em">Encounter Zapdos 10 times in X</li>
+  			<li style="margin-left:2em; padding-bottom: 0;">Catch Zapdos at Sea Spirit's Den</li>
+			<p>More Zapdos Information</p>
+			<embed type="text/html" src="https://buntips.com/pokemon-x-how-to-get-zapdos/"  width="500" height="200">
+
+ 			</ol>
+ 		</li>
+ 		<li>Present Pokedex to Game Director in Coumarine City (North side, in a hotel)</li>
+	</ol>
+
+	<h3>Get a life<h3>
+	<p>Seriously, what are you doing with all of your time :| </p>
+	
+
+	</div>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<center>
+	<h2 style="font-size:15px;" id="More-Info";>More Pokemon Info</h2>
+	<h4 style="font-size:15px;"><a href="https://bulbapedia.bulbagarden.net/wiki/Main_Page">Bulbapedia</a></h2>
+	<h4 style="font-size:15px;"><a href="https://www.serebii.net/">Serebii</a></h2>
+	<h4 style="font-size:15px;"><a href="https://www.serebii.net/omegarubyalphasapphire/hoenndex.shtml">Serebii ORAS Hoenn Pokedex</a></h2>
+	<h4 style="font-size:15px;"><a href="https://www.serebii.net/xy/centralpokedex.shtml">Serebii XY Pokedex</a></h2>
+	<h4 style="font-size:15px;"><a href="https://pokemondb.net/pokedex/shiny">Shinydex</a></h2>
+	</center>
+
+	<br>
+	<br>
+	<br>
+
+	<center>
+	<h2>You made it :) Have an ending penguin<3</h2>
+	</center>
+
+
+<div class="penguin">
+  <div class="penguin-bottom">
+    <div class="right-hand"></div>
+    <div class="left-hand"></div>
+    <div class="right-feet"></div>
+    <div class="left-feet"></div>
+  </div>
+  <div class="penguin-top">
+    <div class="right-cheek"></div>
+    <div class="left-cheek"></div>
+    <div class="belly"></div>
+    <div class="right-eye">
+      <div class="sparkle"></div>
+    </div>
+    <div class="left-eye">
+      <div class="sparkle"></div>
+    </div>
+    <div class="blush-right"></div>
+    <div class="blush-left"></div>
+    <div class="beak-top"></div>
+    <div class="beak-bottom"></div>
+  </div>
+
+	
+	</body>
+</html>
